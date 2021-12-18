@@ -391,7 +391,6 @@ header{
     align-items: center;
     color:white;
     font-weight: bolder;
-    
 
 }
 
@@ -430,9 +429,10 @@ header{
 
 .tooltip::after{
     
-    transform: translateY(250%) scale(var(--scale)) ;
+    transform: translateX(-15%) translateY(250%) scale(var(--scale)) ;
     align-items: center;
     margin-top:.25em;
+   
     content:''; 
     border:var(--arrow-size) solid transparent; 
     border-top-color:var(--tooltip-color);
