@@ -147,7 +147,7 @@ header{
 .btn.btn-border-race a span{
   display:block ;
   position: absolute; 
-  background: #cb25ec;
+  background: rgb(247, 11, 11);
 }
 .btn.btn-border-race a span:nth-child(1){
     /* left border */
