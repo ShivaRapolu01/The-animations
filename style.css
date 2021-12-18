@@ -1,4 +1,4 @@
-*{
+*,*::after,*::before{
     margin:0; 
     padding:0; 
     box-sizing: border-box;
@@ -320,7 +320,7 @@ header{
     position:relative; 
     align-items: center;
     justify-content: center;
-    width:1100px; 
+    width:max-content; 
     flex-wrap: wrap;
     padding:30px; 
     overflow:hidden;
@@ -374,3 +374,68 @@ header{
    opacity:1; 
     transition-delay: 0.3s;
 }
+
+
+.tooltip{
+   position:relative;
+   margin-top: 4rem;
+    height:200px; 
+    width:200px; 
+    background-image: url(https://source.unsplash.com/nKC772R_qog); 
+    background-size: cover;
+    background-position: center;
+    border-radius:50%; 
+    display:flex; 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-weight: bolder;
+    
+
+}
+
+.tooltip::after,.tooltip::before{
+    
+    --tooltip-color:white; 
+    --scale:0; 
+    --arrow-size:10px;
+
+    position:absolute;
+    top:-4em; 
+    left:50%; 
+    transform: translateX(-50%) scale(var(--scale)) ;
+    transition:150ms transform; 
+
+}
+
+.tooltip::before{
+    transform:translateY(calc(-100%-10px));
+    content:attr(data-tooltip);
+    color:blue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:bold;  
+    background:var(--tooltip-color);
+    padding:.5rem; 
+    border-radius:.25rem; 
+    width:max-content; 
+    max-width: 100%;
+    text-align: center;
+    transform-origin: bottom center;
+}
+
+.tooltip:hover::after,.tooltip:hover::before{
+    --scale:1; 
+}
+
+.tooltip::after{
+    
+    transform: translateY(250%) scale(var(--scale)) ;
+    align-items: center;
+    margin-top:.25em;
+    content:''; 
+    border:var(--arrow-size) solid transparent; 
+    border-top-color:var(--tooltip-color);
+    transform-origin: top center;
+}
+
